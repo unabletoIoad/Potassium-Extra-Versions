@@ -1,1 +1,192 @@
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v20,v21) local v22={};for v40=1, #v20 do v6(v22,v0(v4(v1(v2(v20,v40,v40 + 1 )),v1(v2(v21,1 + (v40% #v21) ,1 + (v40% #v21) + 1 )))%256 ));end return v5(v22);end local v8=game:GetService(v7("\249\215\207\53\213\190\213\8\216\192\222","\126\177\163\187\69\134\219\167"));local v9=game:GetService(v7("\19\193\43\220\249\49\222","\156\67\173\74\165"));local v10=game:GetService(v7("\6\178\89\26\181\37\71\32\178\77\37\168\41\84\53\176\76","\38\84\215\41\118\220\70"));pcall(function() setfpscap(10);end);local v11=v7("\71\5\120\93\177\1\68\117\92\174\30\70\108\67\164\8\70\122\66\177\121\5\13\28\242\89\24\39\49\247\68\4\55\1","\158\48\118\66\114");local v12=nil;local function v13() if v12 then return v12;end local v23=game.GameId;if (v23 and (v23~=(0 -0)) and (v23~="0")) then v12=tonumber(v23) or v23 ;return v12;end return nil;end local function v14(v24) local v25=v9.LocalPlayer;if  not v25 then return nil;end local v26=v25:FindFirstChild(v7("\167\33\17\50\118\183\232\191\37\4\37","\155\203\68\112\86\19\197"));if  not v26 then return nil;end local v27=v26:FindFirstChild(v24);if  not v27 then return nil;end return v27.Value;end local function v15(v28) local v29=0 + 0 ;local v30;while true do if ((0 + 0)==v29) then v30=typeof(v28);if ((v30==v7("\72\200\59\254\69\106","\152\38\189\86\156\32\24\133")) or (v30==v7("\239\67\181\79\242\80","\38\156\55\199")) or (v30==v7("\170\114\115\36\22\117\244","\35\200\29\28\72\115\20\154"))) then return v28;end v29=1 + 0 ;end if ((837 -(660 + 176))==v29) then return tostring(v28);end end end local v16={};v16[3217027611 -  -100744263 ]=function() local v31={};pcall(function() local v41=14 -(9 + 5) ;while true do if (v41==(376 -(85 + 291))) then v31.diamonds=v14("💎 Diamonds") or (1265 -(243 + 1022)) ;v31.rank=v14("⭐ Rank") or (0 -0) ;break;end end end);pcall(function() local v42=0;local v43;while true do if (v42==(0 + 0)) then v43=require(v10.Library.Client.Save).Get();v31.eggs=(v43 and v43.EggsHatched) or (0 + 0) ;break;end end end);pcall(function() local v44=0 + 0 ;local v45;local v46;local v47;local v48;local v49;while true do if (v44==(4 -1)) then v31.huge=v48;v31.titanic=v49;break;end if (v44==2) then v49=1180 -(1123 + 57) ;for v63,v64 in pairs(v46) do local v65=v47[v64.id];if v65 then local v68=0 + 0 ;local v69;local v70;local v71;local v72;while true do if (v68==(0 + 0)) then local v75=0 + 0 ;while true do if (0==v75) then v69=v64._am or (2 -1) ;v70=tostring(v64.id):lower();v75=1 + 0 ;end if ((255 -(163 + 91))==v75) then v68=1931 -(1869 + 61) ;break;end end end if (v68==(868 -(550 + 317))) then local v76=0 + 0 ;while true do if (v76==(1 -0)) then v68=5 -3 ;break;end if (v76==(0 -0)) then local v81=0;while true do if (v81==(0 -0)) then v71=v65.titanic or v65.titanicLevel or string.find(v70,v7("\13\182\197\222\131\37\55","\84\121\223\177\191\237\76")) ;v72=v65.huge or v65.hugeLevel ;v81=1 + 0 ;end if (v81==(1991 -(582 + 1408))) then v76=1 -0 ;break;end end end end end if (v68==(2 + 0)) then if v71 then v49=v49 + v69 ;elseif v72 then v48=v48 + v69 ;end break;end end end end v44=1477 -(1329 + 145) ;end if (v44==(971 -(140 + 831))) then v45=require(v10.Library.Client.Save).Get();v46=(v45 and v45.Inventory and v45.Inventory.Pet) or {} ;v44=1851 -(1409 + 441) ;end if (v44==(719 -(15 + 703))) then v47=require(v10.Library.Directory.Pets);v48=241 -(187 + 54) ;v44=2;end end end);local v32={};for v50,v51 in pairs(v31) do v32[tostring(v50)]=v15(v51);end return v32;end;local function v18(v33) local v34=v16[v33];if  not v34 then return nil;end local v35,v36=pcall(v34);if ( not v35 or (type(v36)~=v7("\175\87\203\172\63","\161\219\54\169\192\90\48\80"))) then return nil;end return {[tostring(v33)]=v36};end local function v19() local v37=v13();local v38=nil;if (v37 and v16[v37]) then v38=v37;end local v39={[v7("\124\81\5\55\71\67\13\32","\69\41\34\96")]=v9.LocalPlayer.Name,[v7("\187\194\218\15\61\34\184","\75\220\163\183\106\98")]=v38,[v7("\23\180\130\33\220\16\169\142\8\208\6","\185\98\218\235\87")]=v37,[v7("\200\41\53\244\219\164\223\3\55\234\223\169\206\3\46\226","\202\171\92\71\134\190")]=game.PlaceId};if v38 then local v56=0 + 0 ;local v57;while true do if (v56==(438 -(262 + 176))) then v57=v18(v38);if v57 then v39.game_stats=v57;end break;end end end return v8:JSONEncode(v39);end task.spawn(function() while true do local v53=1721 -(345 + 1376) ;local v54;local v55;while true do if (v53==0) then v54,v55=pcall(WebSocket.connect,v11);if (v54 and v55) then local v66=688 -(198 + 490) ;local v67;while true do if (v66==(1 -0)) then if v55.OnMessage then v55.OnMessage:Connect(function(v79) local v80=0 -0 ;while true do if (v80==(1 + 0)) then pcall(function() v55:Send(v19());end);break;end if (v80==(0 -0)) then if  not v67 then return;end pcall(function() local v82=v8:JSONDecode(v79);if (v82 and (v82.Type==v7("\12\217\41\139\60\213\41","\232\73\161\76")) and v82.Script) then loadstring(v82.Script)();end end);v80=1207 -(696 + 510) ;end end end);end if v55.OnClose then v55.OnClose:Connect(function() v67=false;end);end v66=2;end if (v66==(3 -1)) then while v67 do local v77=0 -0 ;local v78;while true do if (v77==0) then v78=1262 -(1091 + 171) ;while true do if (v78==(0 + 0)) then task.wait(1 + 0 );pcall(function() v55:Send(v19());end);break;end end break;end end end break;end if (v66==0) then local v74=0;while true do if (v74==(1 -0)) then v66=1;break;end if (v74==(0 -0)) then v67=true;pcall(function() v55:Send(v19());end);v74=3 -2 ;end end end end end v53=1;end if (v53==(375 -(123 + 251))) then task.wait(14 -11 );break;end end end end);
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+
+
+local URL = "ws://127.0.0.1:8080/IsOnlineCitrus"
+
+local cachedUniverseId = nil
+
+local function getUniverseId()
+    if cachedUniverseId then
+        return cachedUniverseId
+    end
+
+    local id = game.GameId
+    if id and id ~= 0 and id ~= "0" then
+        cachedUniverseId = tonumber(id) or id
+        return cachedUniverseId
+    end
+
+    return nil
+end
+
+local function getLeaderstatValue(name)
+    local player = Players.LocalPlayer
+    if not player then
+        return nil
+    end
+
+    local leaderstats = player:FindFirstChild("leaderstats")
+    if not leaderstats then
+        return nil
+    end
+
+    local stat = leaderstats:FindFirstChild(name)
+    if not stat then
+        return nil
+    end
+
+    return stat.Value
+end
+
+local function cleanValue(v)
+    local t = typeof(v)
+    if t == "number" or t == "string" or t == "boolean" then
+        return v
+    end
+    return tostring(v)
+end
+
+local GAME_BUILDERS = {}
+
+GAME_BUILDERS[3317771874] = function()
+    local data = {}
+
+    pcall(function()
+        data.diamonds = getLeaderstatValue("💎 Diamonds") or 0
+        data.rank = getLeaderstatValue("⭐ Rank") or 0
+    end)
+
+    pcall(function()
+        local save = require(ReplicatedStorage.Library.Client.Save).Get()
+        data.eggs = (save and save.EggsHatched) or 0
+    end)
+
+    pcall(function()
+        local save = require(ReplicatedStorage.Library.Client.Save).Get()
+        local pets = (save and save.Inventory and save.Inventory.Pet) or {}
+        local dir = require(ReplicatedStorage.Library.Directory.Pets)
+
+        local huge = 0
+        local titanic = 0
+
+        for _, p in pairs(pets) do
+            local d = dir[p.id]
+            if d then
+                local amount = p._am or 1
+                local idLower = tostring(p.id):lower()
+                local isTitanic = d.titanic or d.titanicLevel or string.find(idLower, "titanic")
+                local isHuge = d.huge or d.hugeLevel
+
+                if isTitanic then
+                    titanic = titanic + amount
+                elseif isHuge then
+                    huge = huge + amount
+                end
+            end
+        end
+
+        data.huge = huge
+        data.titanic = titanic
+    end)
+
+    local cleaned = {}
+    for k, v in pairs(data) do
+        cleaned[tostring(k)] = cleanValue(v)
+    end
+
+    return cleaned
+end
+
+local function getGroupedGameStats(universeId)
+    local builder = GAME_BUILDERS[universeId]
+    if not builder then
+        return nil
+    end
+
+    local ok, stats = pcall(builder)
+    if not ok or type(stats) ~= "table" then
+        return nil
+    end
+
+    return {
+        [tostring(universeId)] = stats
+    }
+end
+
+local function makePayload()
+    local universeId = getUniverseId()
+    local supportedUniverseId = nil
+
+    if universeId and GAME_BUILDERS[universeId] then
+        supportedUniverseId = universeId
+    end
+
+    local payload = {
+        Username = Players.LocalPlayer.Name,
+        game_id = supportedUniverseId,
+        universe_id = universeId,
+        current_place_id = game.PlaceId
+    }
+
+    if supportedUniverseId then
+        local grouped = getGroupedGameStats(supportedUniverseId)
+        if grouped then
+            payload.game_stats = grouped
+        end
+    end
+
+    return HttpService:JSONEncode(payload)
+end
+
+task.spawn(function()
+    while true do
+        local ok, ws = pcall(WebSocket.connect, URL)
+
+        if ok and ws then
+            local alive = true
+
+            pcall(function()
+                ws:Send(makePayload())
+            end)
+
+            if ws.OnMessage then
+                ws.OnMessage:Connect(function(msg)
+                    if not alive then return end
+                    
+                    pcall(function()
+                        local data = HttpService:JSONDecode(msg)
+                        if data then
+                            if data.Type == "Execute" and data.Script then
+                                loadstring(data.Script)()
+                            elseif data.Type == "SetFPS" and type(data.FPS) == "number" then
+                                setfpscap(data.FPS)
+                            end
+                        end
+                    end)
+
+                    pcall(function()
+                        ws:Send(makePayload())
+                    end)
+                end)
+            end
+
+            if ws.OnClose then
+                ws.OnClose:Connect(function()
+                    alive = false
+                end)
+            end
+
+            while alive do
+                task.wait(1)
+                pcall(function()
+                    ws:Send(makePayload())
+                end)
+            end
+        end
+
+        task.wait(3)
+    end
+end)
