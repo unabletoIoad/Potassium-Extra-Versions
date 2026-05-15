@@ -1,4 +1,7 @@
 {
-  "keysystem": true,
-  "backend": true
+  "backend": true,
+  "keysystem": false,
+  "blacklisted_versions": [
+    "1.0.5-DEV.1"
+  ]
 }
