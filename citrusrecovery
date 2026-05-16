@@ -2,7 +2,9 @@ local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
 
 local URL = "ws://127.0.0.1:9090/IsOnlineCitrus"
 
@@ -142,6 +144,8 @@ local function makePayload()
 end
 
 task.spawn(function()
+    repeat task.wait() until Players.LocalPlayer
+
     while true do
         local ok, ws = pcall(WebSocket.connect, URL)
 
@@ -162,7 +166,11 @@ task.spawn(function()
                             if data.Type == "Execute" and data.Script then
                                 loadstring(data.Script)()
                             elseif data.Type == "SetFPS" and type(data.FPS) == "number" then
-                                setfpscap(data.FPS)
+                                if type(setfpscap) == "function" then
+                                    setfpscap(data.FPS)
+                                end
+                            elseif data.Type == "Ping" then
+                                ws:Send(HttpService:JSONEncode({Type = "Pong"}))
                             end
                         end
                     end)
@@ -180,7 +188,7 @@ task.spawn(function()
             end
 
             while alive do
-                task.wait(1)
+                task.wait(2)
                 pcall(function()
                     ws:Send(makePayload())
                 end)
